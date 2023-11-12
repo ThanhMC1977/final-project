@@ -1,4 +1,0 @@
-const pageswapper = {} ;
-pageswapper.homescreen = `
-
-`
