@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Search Tool</title>
+</head>
+<body>
+
+    <h1>Simple Search Tool</h1>
+
+    <label for="searchInput">Enter your search:</label>
+    <input type="text" id="searchInput" oninput="performSearch()">
+
+    <ul id="searchResults"></ul>
+
+    <script>
+        function performSearch() {
+            // Lấy giá trị từ ô nhập liệu
+            var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            // Lấy danh sách các mục cần tìm kiếm (trong trường hợp này, một mảng đơn giản)
+            var itemsToSearch = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+
+            // Lọc các mục phù hợp với từ khóa tìm kiếm
+            var matchingItems = itemsToSearch.filter(function(item) {
+                return item.toLowerCase().includes(searchTerm);
+            });
+
+            // Hiển thị kết quả
+            displayResults(matchingItems);
+        }
+
+        function displayResults(results) {
+            var resultsList = document.getElementById('searchResults');
+            resultsList.innerHTML = ''; // Xóa kết quả trước đó
+
+            // Hiển thị kết quả mới
+            results.forEach(function(result) {
+                var listItem = document.createElement('li');
+                listItem.textContent = result;
+                resultsList.appendChild(listItem);
+            });
+        }
+    </script>
+
+</body>
+</html>
