@@ -1,0 +1,21 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+
+  
+    outline: none;
+    border: none;
+  }
+
+
+ .item {
+  display: flex;
+  height:200px;
+  width:200px;
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
